@@ -8,7 +8,7 @@ module Exfile
 
     def run(cmd)
       puts "[Running] #{cmd}"
-      `#{cmd}` unless ENV['DEBUG']
+      `#{cmd}` unless ENV["EXFILES_DEBUG"]
     end
 
     def welcome_msg
