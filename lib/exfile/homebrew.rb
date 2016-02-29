@@ -1,5 +1,7 @@
 module Exfile
-  class Homebrew
+  module Homebrew
+    extend Base
+
     class << self
       def install
         if already_installed?
