@@ -8,7 +8,17 @@ RSpec.describe Exfile::Base do
   let(:success_msg) { /EXFILES has been yup. Please restart your terminal and vim/ }
 
   describe "base" do
-    it { expect(subject).to be_osx }
+    context "on linux" do
+      before { stub_const("Object::RUBY_PLATFORM", "x86_64-linux") }
+
+      it { expect(subject).to_not be_osx }
+    end
+
+    context "on osx" do
+      before { stub_const("Object::RUBY_PLATFORM", "x86_64-darwin14") }
+
+      it { expect(subject).to be_osx }
+    end
 
     it { expect { subject.run("ls .") }.to output(cmd_msg).to_stdout }
     it { expect { subject.welcome_msg }.to output(welcome_msg).to_stdout }
