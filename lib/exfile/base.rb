@@ -19,7 +19,7 @@ module Exfile
 
     def success_msg(action)
       puts ""
-      puts "=========================================================="
+      puts "======================================================"
       puts ""
       puts "EXFILES has been #{action}. Please restart your terminal and vim."
     end
