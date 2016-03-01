@@ -5,7 +5,7 @@ RSpec.describe Exfile::Homebrew do
 
   let(:update_msg) { /Updating Homebrew/ }
   let(:install_msg) { /Installing Homebrew, the OSX package manager/ }
-  let(:bundle_msg) { /Installing Homebrew packages with Brewfile\.\.\.There may be some warnings/ }
+  let(:bundle_msg) { /Homebrewing packages with Brewfile\.\.\.There may be some warnings/ }
 
   describe "when homebrew is not installed" do
     before { allow($CHILD_STATUS).to receive(:success?).and_return(false) }

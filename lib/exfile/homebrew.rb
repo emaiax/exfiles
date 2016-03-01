@@ -1,3 +1,5 @@
+require "English"
+
 module Exfile
   module Homebrew
     extend Base
@@ -43,13 +45,11 @@ module Exfile
         puts
         puts
         puts "======================================================"
-        puts "Installing Homebrew packages with Brewfile...There may be some warnings."
+        puts "Homebrewing packages with Brewfile...There may be some warnings."
         puts "======================================================"
         # run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
         # run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
-        run %( brew bundle Brewfile )
-        puts
-        puts
+        # run %( brew bundle )
       end
     end
   end
