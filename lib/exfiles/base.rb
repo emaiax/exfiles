@@ -1,7 +1,7 @@
 require "uri"
 require_relative "version"
 
-module Exfile
+module Exfiles
   module Base
     def run(cmd)
       puts "[Running] #{cmd}"

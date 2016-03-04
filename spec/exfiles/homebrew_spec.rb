@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Exfile::Homebrew do
+RSpec.describe Exfiles::Homebrew do
   subject { described_class }
 
   let(:update_msg) { /Updating Homebrew/ }

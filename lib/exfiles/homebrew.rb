@@ -1,6 +1,6 @@
 require "English"
 
-module Exfile
+module Exfiles
   module Homebrew
     extend Base
 

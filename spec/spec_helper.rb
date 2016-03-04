@@ -9,7 +9,7 @@ unless ENV["NO_COVERAGE"]
 end
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "exfile"
+require "exfiles"
 
 RSpec.configure do |config|
   # mocks the $?.success? to true/false

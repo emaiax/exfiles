@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "exfile/version"
+require "exfiles/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "exfiles"
-  spec.version       = Exfile::VERSION
+  spec.version       = Exfiles::VERSION
   spec.authors       = ["Eduardo Maia"]
   spec.email         = ["eduvimaia@gmail.com"]
 
-  spec.summary       = "Installer for emaiax's dotfiles. EXFILES."
-  spec.summary       = "Installer for emaiax's dotfiles. EXFILES."
+  spec.summary       = "Installer for EmaiaX's dotFILES. EXFILES."
+  spec.summary       = "Installer for EmaiaX's dotFILES. EXFILES."
   spec.homepage      = "https://github.com/emaiax/exfiles"
   spec.license       = "MIT"
 

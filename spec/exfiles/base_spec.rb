@@ -1,7 +1,7 @@
 require "spec_helper"
 
-RSpec.describe Exfile::Base do
-  let(:subject) { Class.new { extend Exfile::Base } }
+RSpec.describe Exfiles::Base do
+  let(:subject) { Class.new { extend Exfiles::Base } }
 
   let(:cmd_msg)     { "[Running] ls .\n" }
   let(:welcome_msg) { /Welcome to EXFILES Installation/ }
