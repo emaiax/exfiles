@@ -3,6 +3,8 @@ require_relative "version"
 
 module Exfiles
   module Base
+    extend self
+
     def run(cmd)
       puts "[Running] #{cmd}"
       `#{cmd}` unless ENV["EXFILES_DEBUG"]

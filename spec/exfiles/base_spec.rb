@@ -1,8 +1,6 @@
 require "spec_helper"
 
 RSpec.describe Exfiles::Base do
-  let(:subject) { Class.new { extend Exfiles::Base } }
-
   let(:cmd_msg)     { "[Running] ls .\n" }
   let(:welcome_msg) { /Welcome to EXFILES Installation/ }
   let(:success_msg) { /EXFILES has been yup. Please restart your terminal and vim/ }
