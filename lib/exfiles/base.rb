@@ -1,42 +1,51 @@
-require "uri"
-require_relative "version"
+# frozen_string_literal: true
+
+require "exfiles/version"
 
 module Exfiles
   module Base
     extend self
 
+    def name
+      "EXFILES"
+    end
+
+    def path
+      "~/.dotfiles"
+    end
+
     def run(cmd)
       puts "[Running] #{cmd}"
-      `#{cmd}` unless ENV["EXFILES_DEBUG"]
+
+      !`#{cmd}`.empty? unless ENV["EXFILES_DEBUG"]
     end
 
     def osx?
       RUBY_PLATFORM.downcase.include?("darwin")
     end
 
-    def welcome_msg
+    def welcome
       puts
       puts "======================================================"
-      puts "Welcome to EXFILES Installation."
+      puts "Welcome to #{name} Installation. #{Tty.emoji}"
       puts "======================================================"
       puts
     end
 
-    def success_msg(action)
+    def success
       puts
       puts "======================================================"
       puts
-      puts "EXFILES has been #{action}. Please restart your terminal and vim."
+      puts "#{name} has been installed successfully. Please restart your terminal and vim. #{Tty.emoji}"
     end
 
-    def fail_msg(reason)
-      puts
+    def fail(reason)
       puts "======================================================"
       puts
-      puts "We're very sorry, but EXFILES couldn't be installed at this time </3"
-      puts "Please open an issue on Github following the link bellow:"
+      puts "We're very sorry, #{name} couldn't be installed at this time. #{Tty.broken_heart}"
+      puts "Please open an issue on Github following the link below:"
       puts
-      puts URI.encode("https://github.com/emaiax/dotfiles/issues/new?labels=bug&title=[E#{Exfile::VERSION}] #{reason}")
+      puts CGI.escape("https://github.com/emaiax/dotfiles/issues/new?labels=bug&title=[#{VERSION}] #{reason}")
     end
   end
 end

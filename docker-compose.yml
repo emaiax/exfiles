@@ -1,0 +1,13 @@
+version: "3"
+
+volumes:
+  bundle:
+
+services:
+  exfiles:
+    build: .
+    image: emaiax/exfiles
+    command: bundle exec rspec spec
+    volumes:
+      - ./:/root/.exfiles
+      - bundle:/usr/local/bundle

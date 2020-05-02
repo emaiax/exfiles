@@ -1,7 +1,9 @@
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.5
+  Exclude:
+    - bin/**/*
 
 Documentation:
   Enabled: false
@@ -9,5 +11,8 @@ Documentation:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Metrics/LineLength:
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
+Layout/LineLength:
   Max: 120

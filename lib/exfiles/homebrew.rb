@@ -1,9 +1,11 @@
-require "English"
+# frozen_string_literal: true
 
 module Exfiles
   module Homebrew
     extend Base
     extend self
+
+    URL = "https://raw.githubusercontent.com/Homebrew/install/master/install"
 
     def install
       if already_installed?
@@ -18,18 +20,17 @@ module Exfiles
     private
 
     def already_installed?
-      run %( which brew )
-      $CHILD_STATUS.success?
+      run("which brew")
     end
 
     def install_homebrew
       puts
       puts
       puts "======================================================"
-      puts "Installing Homebrew, the OSX package manager...If it's"
-      puts "already installed, this will do nothing."
+      puts "Installing Homebrew, the OSX package manager...       "
+      puts "If it's already installed, this will do nothing."
       puts "======================================================"
-      run %( ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" )
+      # run %[ruby -e "$(curl -fsSL #{URL})"]
     end
 
     def update_homebrew
@@ -38,18 +39,17 @@ module Exfiles
       puts "======================================================"
       puts "Updating Homebrew."
       puts "======================================================"
-      run %( brew update )
+      # run %[brew update]
     end
 
     def bundle_brewfile
       puts
       puts
       puts "======================================================"
-      puts "Homebrewing packages with Brewfile...There may be some warnings."
+      puts "Homebrewing packages with Brewfile... There may be some warnings."
       puts "======================================================"
-      # run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
-      # run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
-      # run %( brew bundle )
+      # run %[brew install zsh ctags git the_silver_searcher]
+      # run %[brew bundle]
     end
   end
 end
