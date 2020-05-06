@@ -4,10 +4,10 @@ MAINTAINER emaiax
 RUN apk add --no-cache --update bash build-base git
 RUN gem update --system && gem install bundler
 
-COPY . /root/.exfiles
+COPY . /app/exfiles
 
-RUN cd /root/.exfiles && bundle install
+RUN cd /app/exfiles && bundle install
 
-WORKDIR /root/.exfiles
+WORKDIR /app/exfiles
 
 CMD ["/bin/bash"]

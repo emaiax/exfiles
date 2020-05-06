@@ -9,5 +9,5 @@ services:
     image: emaiax/exfiles
     command: bundle exec rspec spec
     volumes:
-      - ./:/root/.exfiles
+      - ./:/app/exfiles
       - bundle:/usr/local/bundle
