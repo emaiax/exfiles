@@ -20,7 +20,7 @@ module Exfiles
     private
 
     def already_installed?
-      run("which brew")
+      run "which brew"
     end
 
     def install_homebrew
@@ -30,7 +30,8 @@ module Exfiles
       puts "Installing Homebrew, the OSX package manager...       "
       puts "If it's already installed, this will do nothing."
       puts "======================================================"
-      # run %[ruby -e "$(curl -fsSL #{URL})"]
+
+      run "curl -fsSL #{URL}"
     end
 
     def update_homebrew
@@ -39,7 +40,8 @@ module Exfiles
       puts "======================================================"
       puts "Updating Homebrew."
       puts "======================================================"
-      # run %[brew update]
+
+      run "brew update"
     end
 
     def bundle_brewfile
@@ -48,8 +50,8 @@ module Exfiles
       puts "======================================================"
       puts "Homebrewing packages with Brewfile... There may be some warnings."
       puts "======================================================"
-      # run %[brew install zsh ctags git the_silver_searcher]
-      # run %[brew bundle]
+
+      run "brew install zsh ctags git the_silver_searcher macvim"
     end
   end
 end
